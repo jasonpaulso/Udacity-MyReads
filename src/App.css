@@ -14,6 +14,11 @@ body, .app {
   padding: 10px 0;
   background: #2e7c31;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 100;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .list-books-title h1 {
   font-weight: 400;
@@ -22,6 +27,7 @@ body, .app {
 }
 
 .list-books-content {
+  margin-top: 100px;
   padding: 0 0 80px;
   flex: 1;
 }
@@ -115,7 +121,7 @@ body, .app {
   flex-wrap: wrap;
 }
 .books-grid li {
-  padding: 10px 15px;
+  /*padding: 10px 15px;*/
   text-align: left;
 }
 
@@ -161,12 +167,41 @@ body, .app {
   cursor: pointer;
 }
 
+.book-shelf-changer select#shelf {
+  height: 40px;
+  width: 40px;
+}
+
+
 /* book cover */
 
 .book-cover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background: #eee;
+  background-size: cover;
+  
 }
+
+.book-cover {
+  box-shadow: 0 4px 7px rgba(0,0,0,0.16), 0 4px 7px rgba(0,0,0,0.23);
+}
+
+.book-top, .open-search a {
+  transition: all .22s ease-in-out;
+}
+
+.book-top:hover, .open-search a:hover {
+  transform: scale(1.1);
+
+  padding-bottom: 10px;
+  
+}
+
+.book:not(:first-of-type) {
+  margin-left: 20px;
+}
+
+
 .book-cover-title {
   padding: 20px 10px 0;
   text-align: center;
